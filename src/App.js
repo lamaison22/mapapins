@@ -16,6 +16,10 @@ function App() {
     {
       geocode: [48.855, 2.34],
       popUp: "Harro je susi le oasdo 3",
+      cnae: "12313131",
+      empregadosTotais: 640,
+      novosContratados: 240,
+      descricao: "uma empresa que faz algo na area da saudo e tabme m asodkawkdoakwa"
     },
   ];
   const customIcon = new Icon({
@@ -42,7 +46,13 @@ function App() {
         <MarkerClusterGroup chunkedLoading iconCreateFunction={createCustomClusterIcon}>
           {markers.map((marker) => (
             <Marker position={marker.geocode} icon={customIcon}>
-              <Popup>{marker.popUp}</Popup>
+              <Popup className="popupsContent"> 
+                <p>empregados: {marker.empregadosTotais}</p>
+                <p>novos empregados: {marker.novosContratados}</p>
+                <p>taxa de crescimento: {((marker.empregadosTotais*100)/(marker.empregadosTotais-marker.novosContratados))}%</p>
+
+
+                </Popup>
             </Marker>
           ))}
         </MarkerClusterGroup>

@@ -10,7 +10,10 @@
 #root{
   height: 100vh;
 }
+.popupsContent{
+  
 
+}
 /*tamanho*/
 .leaflet-container{
   height: 100vh;
